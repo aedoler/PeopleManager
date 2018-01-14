@@ -47,5 +47,11 @@ public class GreetingController {
 		ModelAndView model = new ModelAndView("login");
 		return model;
 	}
+	
+	@RequestMapping("/scheduleAppointment")
+	protected ModelAndView scheduleAppoingmentRequestHandler() {
+		ModelAndView model = new ModelAndView("ScheduleAppointment");
+		return model;
+	}
 
 }
