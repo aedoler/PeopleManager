@@ -16,7 +16,10 @@
 <body>
 <h2>${welcome}</h2>
 <a href="addPatient">
-<button>Add Patient</button>
+<button>Register new patient</button>
+</a>
+<a href="addDoctor">
+<button>Register new physician</button>
 </a>
 
 </body>

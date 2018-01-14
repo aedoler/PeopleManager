@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.app.PeopleManager.model.Doctor;
 import com.app.PeopleManager.model.Patient;
 
 @Controller
@@ -51,6 +52,25 @@ public class GreetingController {
 	@RequestMapping("/scheduleAppointment")
 	protected ModelAndView scheduleAppoingmentRequestHandler() {
 		ModelAndView model = new ModelAndView("ScheduleAppointment");
+		return model;
+	}
+	
+	@RequestMapping("/addDoctor")
+	protected ModelAndView addDoctorRequestHandler() {
+		ModelAndView model = new ModelAndView("AddDoctor");
+		model.addObject("greeting", "Please enter the physician's information below");
+		return model;
+	}
+	
+	@RequestMapping("/doctorFormSuccess")
+	protected ModelAndView requestHandler(@Valid @ModelAttribute("doctor") Doctor doctor, BindingResult data) {
+		ModelAndView model = null;
+		if (data.hasErrors()) {
+			model = new ModelAndView("AddDoctor");
+		}
+		else {
+			model = new ModelAndView("AddDoctorSuccess");
+		}
 		return model;
 	}
 
