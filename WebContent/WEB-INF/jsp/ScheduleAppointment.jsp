@@ -27,7 +27,7 @@
         </script>
     </head>
     <body>
-        Enter your birthdate :
+        Appointment date :
         <input name="date1" type="text" id="date-pick" size="10" maxlength="10" />
     </body>
 </html>
