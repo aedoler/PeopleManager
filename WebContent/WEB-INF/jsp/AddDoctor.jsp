@@ -80,19 +80,25 @@
 		  <div class="form-group row">
 		    <label class="col-md-3 col-sm-3" for="streetAddress">Street address</label>
 		    <div class="col-md-9 col-sm-9">
-		    <input type="text" class="form-control" id="name" placeholder="Enter street address" name="address.streetAddress">
+		    <input type="text" class="form-control" id="streetAddress" placeholder="Enter street address" name="streetAddress">
 		    </div>
 		  </div>
 		  <div class="form-group row">
 		    <label class="col-md-3 col-sm-3" for="city">City</label>
 		    <div class="col-md-9 col-sm-9">
-		    <input type="text" class="form-control" id="name" placeholder="Enter city" name="address.city">
+		    <input type="text" class="form-control" id="city" placeholder="Enter city" name="city">
+		    </div>
+		  </div>
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="state">State/Province</label>
+		    <div class="col-md-9 col-sm-9">
+		    <input type="text" class="form-control" id="state" placeholder="Enter state" name="state">
 		    </div>
 		  </div>
 		  <div class="form-group row">
 		    <label class="col-md-3 col-sm-3" for="country">Country</label>
 		    <div class="col-md-9 col-sm-9">
-		    <input type="text" class="form-control" id="country" placeholder="Enter country" name="address.country">
+		    <input type="text" class="form-control" id="country" placeholder="Enter country" name="country">
 		    </div>
 		  </div>
 		  <hr>
@@ -103,5 +109,6 @@
 		<br>
 	</div>
 </div>
+</body>
 
 </html>

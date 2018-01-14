@@ -17,7 +17,7 @@
 <body>
 <div class="container">
 	<div class="col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-		<h2>Please confirm patient info below</h2>
+		<h2>You have successfully added a patient with the following information:</h2>
 		<table class="table table-condensed">
 		<tr><td>First name:</td><td>${patient.firstName}</td></tr>
 		<tr><td>Middle name:</td><td>${patient.middleName}</td></tr>
@@ -25,7 +25,7 @@
 		<tr><td>DOB:</td><td>${patient.dob}</td></tr>
 		<tr><td>Phone:</td><td>${patient.phoneNumber}</td></tr>
 		<tr><td>Email:</td><td>${patient.emailAddress}</td></tr>
-		<tr><td>Address:</td><td>${patient.address.streetAddress} ${patient.address.city},${patient.address.country}</td></tr>
+		<tr><td>Address:</td><td>${patient.streetAddress} ${patient.city}, ${patient.state}, ${patient.country}</td></tr>
 		</table>
 	</div>
 </div>

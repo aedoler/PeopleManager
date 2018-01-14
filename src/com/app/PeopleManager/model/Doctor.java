@@ -16,4 +16,5 @@ public class Doctor extends AbstractPerson {
 		super();
 	}
 
+
 }

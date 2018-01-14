@@ -12,7 +12,13 @@ public interface Person {
 	
 	public void setDob(Date dob);
 	
-	public void setAddress(Address address);
+	public void setStreetAddress(String streetAddress);
+	
+	public void setCity(String city);
+	
+	public void setState(String state);
+	
+	public void setCountry(String country);
 	
 	public void setPhoneNumber(String phoneNumber);
 	
@@ -26,13 +32,17 @@ public interface Person {
 	
 	public Date getDob();
 	
-	public Address getAddress();
+	public String getStreetAddress();
+	
+	public String getCity();
+	
+	public String getState();
+	
+	public String getCountry();
 	
 	public String getPhoneNumber();
 	
 	public String getEmailAddress();
-	
-	
 	
 
 }

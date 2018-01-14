@@ -2,14 +2,59 @@ package com.app.PeopleManager.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
+
+
+
+@MappedSuperclass
 public abstract class AbstractPerson implements Person {
 	
+	
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", updatable = false, nullable = false)
+	protected Long id;
+	
+	@Column(name = "first_name")
 	private String firstName;
+	
+	@Column(name = "middle_name")
 	private String middleName;
+	
+	@Column(name = "last_name")
 	private String lastName;
+	
+	@Column(name = "dob")
+	@Temporal(TemporalType.DATE)
 	private Date dob;
-	private Address address;
+	
+	@Column(name = "street_address")
+	private String streetAddress;
+	
+	@Column(name = "city")
+	private String city;
+	
+	@Column(name = "state")
+	private String state;
+	
+	@Column(name = "country")
+	private String country;
+	
+	@Column(name = "phone")
 	private String phoneNumber;
+	
+	@Column(name = "email")
 	private String emailAddress;
 
 	@Override
@@ -36,11 +81,6 @@ public abstract class AbstractPerson implements Person {
 		
 	}
 
-	@Override
-	public void setAddress(Address address) {
-		this.address = address;
-		
-	}
 	
 	@Override
 	public void setPhoneNumber(String phoneNumber) {
@@ -77,12 +117,47 @@ public abstract class AbstractPerson implements Person {
 		return dob;
 	}
 
-	@Override
-	public Address getAddress() {
-		// TODO Auto-generated method stub
-		return address;
-	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getStreetAddress() {
+		return streetAddress;
+	}
+
+	public void setStreetAddress(String streetAddress) {
+		this.streetAddress = streetAddress;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
 	@Override
 	public String getPhoneNumber() {
 		return phoneNumber;

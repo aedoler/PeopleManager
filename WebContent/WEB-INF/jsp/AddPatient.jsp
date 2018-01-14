@@ -15,54 +15,83 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <div class="container">
 	<h2 class="col-lg-offset-3 col-md-offset-3 col-sm-offset-1">${greeting}</h2>
-<div class="col-lg-offset-3 col-lg-6 col-md-offset-4 col-md-6 col-sm-offset-2 col-sm-8" >
+<div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-9" >
 
-		<form class="form-horizontal" action="patientFormSuccess" method="POST">
+		<form  action="patientFormSuccess" method="POST">
 		<h4>Basic Information</h4>
-		  <div class="form-group">
-		    <label for="name">First name</label>
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="name">First name:</label>
+		    <div class="col-md-9 col-sm-9">
 		    <input type="text" class="form-control" id="name" placeholder="Enter name" name="firstName">
+		    </div>
 		  </div>
-		  <div class="form-group">
-		    <label for="middleName">Middle name</label>
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="middleName">Middle name</label>
+		    <div class="col-md-9 col-sm-9">
 		    <input type="text" class="form-control" id="middleName" placeholder="Enter middlename" name="middleName">
+		    </div>
 		  </div>
-		  <div class="form-group">
-		    <label for="lastName">Last name</label>
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="lastName">Last name</label>
+		    <div class="col-md-9 col-sm-9">
 		    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" name="lastName">
+		   </div>
 		  </div>
-		  <div class="form-group">
-		    <label for="dob">DOB</label>
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="dob">DOB</label>
+		    <div class="col-md-9 col-sm-9">
 		    <input type="text" class="form-control" id="dob" placeholder="Enter DOB" name="dob">
+		    </div>
 		  </div>
+		  <hr>
 		  <h4>Contact Information</h4>
-		  <div class="form-group">
-		    <label for="phoneNumber">Phone number</label>
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3 for="phoneNumber">Phone number</label>
+		    <div class="col-md-9 col-sm-9">
 		    <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number" name="phoneNumber">
+		    </div>
 		  </div>
-		  <div class="form-group">
-		    <label for="emailAddress">Email address</label>
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3 for="emailAddress">Email address</label>
+		    <div class="col-md-9 col-sm-9">
 		    <input type="text" class="form-control" id="emailAddress" placeholder="Enter email address" name="emailAddress">
+		    </div>
 		  </div>
+		  <hr>
 		  <h4>Address</h4>
-		  <div class="form-group">
-		    <label for="streetAddress">Street address</label>
-		    <input type="text" class="form-control" id="name" placeholder="Enter street address" name="address.streetAddress">
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="streetAddress">Street address</label>
+		    <div class="col-md-9 col-sm-9">
+		    <input type="text" class="form-control" id="streetAddress" placeholder="Enter street address" name="streetAddress">
+		    </div>
 		  </div>
-		  <div class="form-group">
-		    <label for="city">City</label>
-		    <input type="text" class="form-control" id="name" placeholder="Enter city" name="address.city">
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="city">City</label>
+		    <div class="col-md-9 col-sm-9">
+		    <input type="text" class="form-control" id="city" placeholder="Enter city" name="city">
+		    </div>
 		  </div>
-		  <div class="form-group">
-		    <label for="country">Country</label>
-		    <input type="text" class="form-control" id="country" placeholder="Enter country" name="address.country">
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="state">State/Province</label>
+		    <div class="col-md-9 col-sm-9">
+		    <input type="text" class="form-control" id="state" placeholder="Enter state" name="state">
+		    </div>
 		  </div>
-		  <button type="submit" class="btn btn-primary">Submit</button>
+		  <div class="form-group row">
+		    <label class="col-md-3 col-sm-3" for="country">Country</label>
+		    <div class="col-md-9 col-sm-9">
+		    <input type="text" class="form-control" id="country" placeholder="Enter country" name="country">
+		    </div>
+		  </div>
+		  <hr>
+		  <button class="btn btn-primary col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6" type="submit" class="btn btn-primary">Submit</button>
+			<br>
 		</form>
+		<br>
+		<br>
 	</div>
 </div>
-
+</body>
 </html>
