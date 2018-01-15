@@ -42,7 +42,7 @@ public class PatientDAOImpl implements PatientDAO {
 	@Override
 	public List<Patient> listPatients() {
 		Session session = this.sessionFactory.getCurrentSession();
-		List<Patient> patientsList = session.createQuery("from Person").list();
+		List<Patient> patientsList = session.createQuery("from Patient").list();
 		for(Patient p : patientsList){
 			//logger.info("Person List::"+p);
 		}

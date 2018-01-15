@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -70,6 +71,31 @@
 <a href="addDoctor">
 <button>Register new physician</button>
 </a>
+
+<div class="container">
+<h2>Currently registered patients:</h2>
+<table class="table table-striped">
+		<tr>
+			<td></td><td>NAME</td><td>DOB</td><td>Phone</td><td>Email</td><td>Address</td>
+		</tr>
+		<c:forEach items="${patients}" var="patient">
+			<tr>
+			<td>
+				<button type="button" class="btn btn-info">Edit</button>
+			</td>
+			<td><c:out value="${patient.firstName}"/> <c:out value="${patient.middleName}"/> <c:out value="${patient.lastName}"/></td>
+			<td><c:out value="${patient.dob}"/></td>
+			<td><c:out value="${patient.phoneNumber}"/></td>
+			<td><c:out value="${patient.emailAddress}"/></td>
+			<td><c:out value="${patient.streetAddress}"/> <c:out value="${patient.city}"/> <c:out value="${patient.state}"/> <c:out value="${patient.country}"/></td>
+		<!--  
+			<td><a href="<c:url value='/edit-${employee.ssn}-employee' />">${employee.ssn}</a></td>
+			<td><a href="<c:url value='/delete-${employee.ssn}-employee' />">delete</a></td>
+		-->
+			</tr>
+		</c:forEach>
+	</table>
+</div>
 
 </body>
 </html>

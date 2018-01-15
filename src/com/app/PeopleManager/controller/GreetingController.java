@@ -1,5 +1,7 @@
 package com.app.PeopleManager.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,9 @@ public class GreetingController {
 	@RequestMapping("/")
 	protected ModelAndView baseRequestHandler() {
 		ModelAndView model = new ModelAndView("index");
+		List<Patient> patients = patientService.listPatients();
+		System.out.println("RETURNED PATIENTS LIST :" + patients.toString());
+		model.addObject("patients", patients);
 		model.addObject("welcome", "Welcome. What would you like to do?");
 		return model;
 	}
