@@ -7,7 +7,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/static/adminlte/css/AdminLTE.css">
+<link rel="stylesheet" href="resources/static/adminlte/js/adminlte.js">
+<link rel="stylesheet" href="resources/static/styles.css">
 
+<!-- Select2 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -16,12 +22,18 @@
 </head>
 <body>
 
-<div class="container">
-	<h2 class="col-lg-offset-3 col-md-offset-3 col-sm-offset-1">${greeting}</h2>
-<div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-1 col-sm-9" >
+<section class="content">
+	<div class="row">
+		<div class="col-md-offset-2 col-lg-offset-2 col-md-8 col-lg-8">
+		    <div class="box box-primary">
+		        
 
-		<form  action="doctorFormSuccess" method="POST">
-		<h4>Basic Information</h4>
+	<h2 class="box-header with-border">${greeting}</h2>
+
+
+		<form role="form" action="doctorFormSuccess" method="POST">
+		   <h4>Basic Information</h4>
+			<div class="box-body">
 		  <div class="form-group row">
 		    <label class="col-md-3 col-sm-3" for="name">First name:</label>
 		    <div class="col-md-9 col-sm-9">
@@ -41,9 +53,11 @@
 		   </div>
 		  </div>
 		  <div class="form-group row">
+		    <div class="input-group date"></div>
 		    <label class="col-md-3 col-sm-3" for="dob">DOB</label>
 		    <div class="col-md-9 col-sm-9">
-		    <input type="text" class="form-control" id="dob" placeholder="Enter DOB" name="dob">
+		    <input type="text" class="form-control pull-right" data-inputmask="'alias':'mm/dd/yyyy" id="dob" placeholder="Enter DOB" name="dob" datamask>
+		    </div>
 		    </div>
 		  </div>
 		  <hr>
@@ -107,8 +121,12 @@
 		</form>
 		<br>
 		<br>
+		</div>
 	</div>
-</div>
+	</div>
+
+
+</section>
 </body>
 
 </html>

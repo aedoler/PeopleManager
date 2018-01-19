@@ -19,7 +19,7 @@ import com.app.PeopleManager.model.Doctor;
 import com.app.PeopleManager.model.Patient;
 
 @Controller
-public class GreetingController {
+public class PatientController {
 	
 	@Autowired
 	private PatientService patientService;
@@ -61,34 +61,9 @@ public class GreetingController {
 		return model;
 	}
 	
-	@RequestMapping("/login")
-	protected ModelAndView loginRequestHandler() {
-		ModelAndView model = new ModelAndView("login");
-		return model;
-	}
-	
 	@RequestMapping("/scheduleAppointment")
 	protected ModelAndView scheduleAppoingmentRequestHandler() {
 		ModelAndView model = new ModelAndView("ScheduleAppointment");
-		return model;
-	}
-	
-	@RequestMapping("/addDoctor")
-	protected ModelAndView addDoctorRequestHandler() {
-		ModelAndView model = new ModelAndView("AddDoctor");
-		model.addObject("greeting", "Please enter the physician's information below");
-		return model;
-	}
-	
-	@RequestMapping("/doctorFormSuccess")
-	protected ModelAndView requestHandler(@Valid @ModelAttribute("doctor") Doctor doctor, BindingResult data) {
-		ModelAndView model = null;
-		if (data.hasErrors()) {
-			model = new ModelAndView("AddDoctor");
-		}
-		else {
-			model = new ModelAndView("AddDoctorSuccess");
-		}
 		return model;
 	}
 
