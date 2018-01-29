@@ -29,24 +29,7 @@ public class PatientController {
 	public void setPatientService(PatientService ps){
 		this.patientService = ps;
 	}
-
-	@RequestMapping("/")
-	protected ModelAndView baseRequestHandler() {
-		ModelAndView model = new ModelAndView("index");
-		List<Patient> patients = patientService.listPatients();
-		System.out.println("RETURNED PATIENTS LIST :" + patients.toString());
-		model.addObject("patients", patients);
-		model.addObject("welcome", "Welcome. What would you like to do?");
-		return model;
-	}
 	
-    @RequestMapping("/addPatient")
-	public ModelAndView requestHandler() { 
-    	ModelAndView model = new ModelAndView("AddPatient");
-    	model.addObject("greeting", "Please enter the patient's information below");
-    	return model;
-    	
-    }
     
 	@RequestMapping("/patientFormSuccess")
 	protected ModelAndView requestHandler(@Valid @ModelAttribute("patient") Patient patient, BindingResult data) {

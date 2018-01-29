@@ -3,13 +3,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Register New Physician</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Admin LTE -->
 <link rel="stylesheet" href="resources/static/adminlte/css/AdminLTE.css">
-<link rel="stylesheet" href="resources/static/adminlte/js/adminlte.js">
+<script src="resources/static/adminlte/js/adminlte.js"></script>
 <link rel="stylesheet" href="resources/static/styles.css">
+<link rel="stylesheet" href="resources/static/adminlte/css/alt/AdminLTE-bootstrap-social.css">
+<link rel="stylesheet" href="resources/static/adminlte/css/alt/AdminLTE-select2.css">
+<link rel="stylesheet" href="resources/static/adminlte/css/alt/AdminLTE-fullcalendar.css">
+<script src="resources/static/adminlte/plugins/jQueryUI/jquery-ui.js"></script>
+<script src="resources/static/adminlte/plugins/input-mask/jquery.inputmask.js"></script>
+<script src="resources/static/adminlte/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+
+
 
 <!-- Select2 -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
@@ -25,7 +35,7 @@
 <section class="content">
 	<div class="row">
 		<div class="col-md-offset-2 col-lg-offset-2 col-md-8 col-lg-8">
-		    <div class="box box-primary">
+		    <div style="padding:1%" class="box box-primary">
 		        
 
 	<h2 class="box-header with-border">${greeting}</h2>

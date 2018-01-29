@@ -24,7 +24,7 @@ public abstract class AbstractPerson implements Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", updatable = false, nullable = false)
-	protected Long id;
+	protected int id;
 	
 	@Column(name = "first_name")
 	private String firstName;
@@ -118,11 +118,11 @@ public abstract class AbstractPerson implements Person {
 	}
 
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

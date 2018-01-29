@@ -7,81 +7,80 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- Admin LTE -->
+<link rel="stylesheet" href="resources/static/adminlte/css/AdminLTE.css">
+<link rel="stylesheet" href="resources/static/adminlte/css/skins/_all-skins.css">
+<script src="resources/static/adminlte/js/adminlte.js"></script>
 <link rel="stylesheet" href="resources/static/styles.css">
+<link rel="stylesheet" href="resources/static/adminlte/css/alt/AdminLTE-bootstrap-social.css">
+<link rel="stylesheet" href="resources/static/adminlte/css/alt/AdminLTE-select2.css">
+<link rel="stylesheet" href="resources/static/adminlte/css/alt/AdminLTE-fullcalendar.css">
+<script src="resources/static/adminlte/plugins/jQueryUI/jquery-ui.js"></script>
+<script src="resources/static/adminlte/plugins/input-mask/jquery.inputmask.js"></script>
+<script src="resources/static/adminlte/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="resources/static/adminlte/css/AdminLTE.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-<header class="main-header">
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href=""><i class="fa fa-home" aria-hidden="true"></i></a>
-	    </div>
-	
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
-	      	<li><a href="scheduleAppointment">Schedule Appointment</a></li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Patients <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">Separated link</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">One more separated link</a></li>
-	          </ul>
-	        </li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Physicians <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">Separated link</a></li>
-	            <li role="separator" class="divider"></li>
-	            <li><a href="#">One more separated link</a></li>
-	          </ul>
-	        </li>
-	      </ul>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">Logout</a></li>
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
-</header>	
+<body class="skin-blue layout-top-nav">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="../../index2.html" class="navbar-brand"><b>Admin</b>LTE</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointments <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Schedule new</a></li>
+                <li><a href="#">Edit</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Patients <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="addPatient">Add new</a></li>
+                <li><a href="#">Edit</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Physicians <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="addDoctor">Add new</a></li>
+                <li><a href="#">Edit</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>	
 <section class="content">
-<h2>${welcome}</h2>
 	<div class="container">
-	    <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10">
 			<div class="row index-row">
-			<h3 class="content-header">Appointments</h3>
+			<h3 class="content-header">${welcome}</h3>
 			<hr>
-	        <div class="col-lg-6 col-xs-6">
+	        <div class="col-lg-4 col-xs-12">
 	          <!-- small box -->
-	          <div class="small-box bg-aqua">
+	          <div class="small-box bg-navy">
 	            <div class="inner">
-	              <h3>New</h3>
+	              <h3>Appointment</h3>
 	
-	              <p>Schedule a new appointment</p>
+	              <p>Schedule new appointment</p>
 	            </div>
 	            <div class="icon">
 	              <i class="ion ion-bag"></i>
@@ -90,100 +89,41 @@
 	          </div>
 	        </div>
 	        <!-- ./col -->
-	        <div class="col-lg-6 col-xs-6">
+	        <div class="col-lg-4 col-xs-12">
 	          <!-- small box -->
 	          <div class="small-box bg-green">
 	            <div class="inner">
-	              <h3>Edit</h3>
+	              <h3>Patients</h3>
 	
-	              <p>Edit an existing appointment</p>
+	              <p>Register a new patient in the database</p>
 	            </div>
 	            <div class="icon">
 	              <i class="ion ion-stats-bars"></i>
-	            </div>
-	            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
-	          </div>
-	        </div>
-	       </div>
-	       <div class="row">
-			<h3 class="content-header">Manage Patients</h3>
-			<hr>
-	        <div class="col-lg-6 col-xs-6">
-	          <!-- small box -->
-	          <div class="small-box bg-orange">
-	            <div class="inner">
-	              <h3>New</h3>
-	
-	              <p>Register a new patient</p>
-	            </div>
-	            <div class="icon">
-	              <i class="ion ion-bag"></i>
 	            </div>
 	            <a href="addPatient" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
 	          </div>
 	        </div>
-	        <!-- ./col -->
-	        <div class="col-lg-6 col-xs-6">
+	        	        <div class="col-lg-4 col-xs-12">
 	          <!-- small box -->
 	          <div class="small-box bg-purple">
 	            <div class="inner">
-	              <h3>Edit</h3>
+	              <h3>Physicians</h3>
 	
-	              <p>Edit an existing patient</p>
+	              <p>Register a new physician in the database</p>
 	            </div>
 	            <div class="icon">
 	              <i class="ion ion-stats-bars"></i>
-	            </div>
-	            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
-	          </div>
-	        </div>
-	       </div>
-	       <div class="row">
-			<h3 class="content-header">Manage Physicians</h3>
-			<hr>
-	        <div class="col-lg-6 col-xs-6">
-	          <!-- small box -->
-	          <div class="small-box bg-navy">
-	            <div class="inner">
-	              <h3>New</h3>
-	
-	              <p>Add a new physican</p>
-	            </div>
-	            <div class="icon">
-	              <i class="ion ion-bag"></i>
 	            </div>
 	            <a href="addDoctor" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
 	          </div>
 	        </div>
-	        <!-- ./col -->
-	        <div class="col-lg-6 col-xs-6">
-	          <!-- small box -->
-	          <div class="small-box bg-red">
-	            <div class="inner">
-	              <h3>Edit</h3>
-	
-	              <p>Edit an existing patient</p>
-	            </div>
-	            <div class="icon">
-	              <i class="ion ion-stats-bars"></i>
-	            </div>
-	            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
-	          </div>
-	      </div>
-	      </div>
-        </div>
+	       </div>
        </div>
 
 </section>
-<a href="addPatient">
-<button>Register new patient</button>
-</a>
-<a href="addDoctor">
-<button>Register new physician</button>
-</a>
 
 <div class="container">
-<h2>Currently registered patients:</h2>
+<h2>Upcoming Appointments:</h2>
 <table class="table table-striped">
 		<tr>
 			<td></td><td>NAME</td><td>DOB</td><td>Phone</td><td>Email</td><td>Address</td>
