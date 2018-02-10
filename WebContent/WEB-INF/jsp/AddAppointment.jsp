@@ -50,7 +50,7 @@
 		    <div class="col-md-9 col-sm-9">
 		    <select class="form-control" id="patient" placeholder="Select Patient" name="patient">
 		    		<c:forEach items="${patients}" var="patient">
-		    			<option value="${patient.id}"><c:out value="${patient.firstName}"/> <c:out value="${patient.lastName}"/></option>
+		    			<option value="${patient.id}"><c:out value="${patient.lastName}"/>, <c:out value="${patient.firstName}"/></option>
 		    		</c:forEach>
 		    </select>
 		    </div>
@@ -58,7 +58,11 @@
 		  <div class="form-group row">
 		    <label class="col-md-3 col-sm-3" for="doctor">Physician:</label>
 		    <div class="col-md-9 col-sm-9">
-		    <input type="text" class="form-control" id="doctor" placeholder="Select Physician" name="doctor">
+		    <select type="text" class="form-control" id="doctor" placeholder="Select Physician" name="doctor">
+		    		<c:forEach items="${doctors}" var="doctor">
+		    			<option value="${doctor.id}"><c:out value="${doctor.lastName}"/>, <c:out value="${doctor.firstName}"/></option>
+		    		</c:forEach>
+		    </select>
 		    </div>
 		  </div>
 		  <div class="form-group row">

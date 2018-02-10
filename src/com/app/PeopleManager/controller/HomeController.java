@@ -29,7 +29,7 @@ public class HomeController {
 		List<Patient> patients = patientService.listPatients();
 		System.out.println("RETURNED PATIENTS LIST :" + patients.toString());
 		model.addObject("patients", patients);
-		model.addObject("Quick Links");
+		model.addObject("greeting",  "Quick Links");
 		return model;
 	}
 	

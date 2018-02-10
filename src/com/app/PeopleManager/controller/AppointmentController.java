@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.app.PeopleManager.data.service.AppointmentService;
+import com.app.PeopleManager.data.service.DoctorService;
 import com.app.PeopleManager.data.service.PatientService;
 import com.app.PeopleManager.model.Appointment;
 import com.app.PeopleManager.model.Doctor;
@@ -24,6 +25,7 @@ public class AppointmentController {
 	@Autowired
 	private AppointmentService appointmentService;
 	private PatientService patientService;
+	private DoctorService doctorService;
 	
 	@Autowired(required=true)
 	@Qualifier(value="appointmentService")
@@ -37,11 +39,19 @@ public class AppointmentController {
 		this.patientService = ps;
 	}
 	
+	@Autowired(required=true)
+	@Qualifier(value="doctorService")
+	public void setDoctorService(DoctorService ds){
+		this.doctorService = ds;
+	}
+	
 	@RequestMapping("/addAppointment")
 	protected ModelAndView addAppointmentRequestHandler() {
 		List<Patient> patients = patientService.listPatients();
+		List<Doctor> doctors = doctorService.listDoctors();
 		ModelAndView model = new ModelAndView("AddAppointment");
 		model.addObject("patients", patients);
+		model.addObject("doctors", doctors);
 		return model;
 	}
 	

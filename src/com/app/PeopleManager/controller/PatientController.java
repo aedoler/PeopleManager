@@ -30,6 +30,13 @@ public class PatientController {
 		this.patientService = ps;
 	}
 	
+	@RequestMapping("/addPatient")
+	protected ModelAndView addPatientRequestHandler() {
+		ModelAndView model = new ModelAndView("AddPatient");
+		model.addObject("greeting", "Please enter the patient's information below");
+		return model;
+	}
+	
     
 	@RequestMapping("/patientFormSuccess")
 	protected ModelAndView requestHandler(@Valid @ModelAttribute("patient") Patient patient, BindingResult data) {

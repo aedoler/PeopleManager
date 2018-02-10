@@ -44,7 +44,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Appointments <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Schedule new</a></li>
+                <li><a href="addAppointment">Schedule new</a></li>
                 <li><a href="#">Edit</a></li>
               </ul>
             </li>
@@ -72,7 +72,7 @@
 <section class="content">
 	<div class="container">
 			<div class="row index-row">
-			<h3 class="content-header">${welcome}</h3>
+			<h3 class="content-header">${greeting}</h3>
 			<hr>
 	        <div class="col-lg-4 col-xs-12">
 	          <!-- small box -->
@@ -85,7 +85,7 @@
 	            <div class="icon">
 	              <i class="ion ion-bag"></i>
 	            </div>
-	            <a href="#" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
+	            <a href="addAppointment" class="small-box-footer">Go <i class="fa fa-arrow-circle-right"></i></a>
 	          </div>
 	        </div>
 	        <!-- ./col -->

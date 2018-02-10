@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,10 +29,13 @@ public class Appointment {
 	 * upon insert, Hibernate only inserts the IDs without associating them with the corresponding object.
 	 * 
 	 */
+	
     //@OneToOne(cascade=CascadeType.ALL)
     //@JoinColumn(name="patient_id", referencedColumnName="id", insertable=false, updatable=false)
-	@Column(name = "patient_id")
-	private int patient;
+	//@Column(name = "patient_id")
+	@ManyToOne(optional=false)
+	@JoinColumn(name="patient_id", referencedColumnName="id")
+	private Patient patient;
     
     //@OneToOne(cascade=CascadeType.ALL)
     //@JoinColumn(name="doctor_id", referencedColumnName="id", insertable=false, updatable=false)
@@ -51,10 +55,11 @@ public class Appointment {
 		this.id = id;
 	}
 	
-	public int getPatient() {
+	public Patient getPatient() {
 		return patient;
 	}
-	public void setPatient(int patient) {
+	
+	public void setPatient(Patient patient) {
 		this.patient = patient;
 	}
 	public int getDoctor() {
