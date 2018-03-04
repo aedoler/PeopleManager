@@ -1,6 +1,8 @@
 package com.app.PeopleManager.config;
 
+import java.util.HashSet;
 import java.util.Properties;
+import java.util.Set;
 
 import javax.sql.DataSource;
 
@@ -11,6 +13,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.ConversionServiceFactoryBean;
+import org.springframework.core.convert.ConversionService;
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -21,13 +27,22 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import com.app.PeopleManager.converter.DoctorTypeConverter;
+import com.app.PeopleManager.converter.PatientTypeConverter;
+
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.app.PeopleManager.config", "com.app.PeopleManager.controller",
 		"com.app.PeopleManager.security", "com.app.PeopleManager.data.dao",
-		"com.app.PeopleManager.data.service"})
+		"com.app.PeopleManager.data.service", "com.app.PeopleManager.converter", "com.app.PeopleManager.*"})
 @Configuration
 @EnableTransactionManagement
 public class MvcConfig extends WebMvcConfigurerAdapter {
+	
+	@Autowired
+	private PatientTypeConverter patientTypeConverter;
+	
+	@Autowired
+	private DoctorTypeConverter doctorTypeConverter;
 	
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -48,7 +63,24 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 	          .addResourceHandler("/resources/**")
 	          .addResourceLocations("/resources/"); 
 	    }
-    
+	    /*
+	     * Boot Config
+	     
+	    @Bean
+	    @Autowired
+	    public ConversionServiceFactoryBean conversionFacilitator(Set<Converter> converters) {
+	      ConversionServiceFactoryBean factory = new ConversionServiceFactoryBean();
+	      factory.setConverters(converters);
+	      return factory;
+	    }	
+	    */
+	    
+	    @Override
+	    public void addFormatters(FormatterRegistry formatterRegistry) {
+	        formatterRegistry.addConverter(patientTypeConverter);
+	        formatterRegistry.addConverter(doctorTypeConverter);
+	    }
+    	
 	    /*
     @Bean(name = "datasource")
     public static DataSource dataSource() {

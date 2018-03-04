@@ -51,9 +51,10 @@ public class PatientDAOImpl implements PatientDAO {
 
 	@Override
 	public Patient getPatientById(int id) {
-		Session session = this.sessionFactory.getCurrentSession();		
+		Session session = this.sessionFactory.openSession();		
 		Patient p = (Patient) session.load(Patient.class, new Integer(id));
 		//logger.info("Person loaded successfully, Person details="+p);
+		System.out.println("----Inside getPatientById DAO");
 		return p;
 	}
 

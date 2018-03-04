@@ -16,6 +16,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Entity
 @Table(name="appointment")
 public class Appointment {
@@ -39,8 +41,10 @@ public class Appointment {
     
     //@OneToOne(cascade=CascadeType.ALL)
     //@JoinColumn(name="doctor_id", referencedColumnName="id", insertable=false, updatable=false)
-	@Column(name = "doctor_id")
-	private int doctor;
+	//@Column(name = "doctor_id")
+	@ManyToOne(optional=false)
+	@JoinColumn(name="doctor_id", referencedColumnName="id")
+	private Doctor doctor;
 	
 	@Column(name = "date")
 	private Date date;
@@ -62,10 +66,10 @@ public class Appointment {
 	public void setPatient(Patient patient) {
 		this.patient = patient;
 	}
-	public int getDoctor() {
+	public Doctor getDoctor() {
 		return doctor;
 	}
-	public void setDoctor(int doctor) {
+	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
 	}
 	public Date getDate() {

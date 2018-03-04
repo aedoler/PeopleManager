@@ -41,6 +41,7 @@ public class PatientServiceImpl implements PatientService {
 	@Override
 	@Transactional
 	public Patient getPatientById(int id) {
+		System.out.println("Inside getPatientByID");
 		return this.patientDAO.getPatientById(id);
 	}
 

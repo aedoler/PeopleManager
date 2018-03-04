@@ -1,5 +1,6 @@
 package com.app.PeopleManager.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,12 @@ public class HomeController {
 	@RequestMapping("/")
 	protected ModelAndView baseRequestHandler() {
 		ModelAndView model = new ModelAndView("index");
-		List<Patient> patients = patientService.listPatients();
-		System.out.println("RETURNED PATIENTS LIST :" + patients.toString());
+		//List<Patient> patients = patientService.listPatients();
+		List<Patient> patients = new ArrayList<Patient>();
+		Patient patient = patientService.getPatientById(2);
+		patients.add(patient);
+		System.out.println("------RETURNED PATIENTS LIST :" + patients.toString());
+		System.out.println("------Patient #1 is : " + patientService.getPatientById(1));
 		model.addObject("patients", patients);
 		model.addObject("greeting",  "Quick Links");
 		return model;

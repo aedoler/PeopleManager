@@ -51,7 +51,7 @@ public class DoctorDAOImpl implements DoctorDAO {
 
 	@Override
 	public Doctor getDoctorById(int id) {
-		Session session = this.sessionFactory.getCurrentSession();		
+		Session session = this.sessionFactory.openSession();		
 		Doctor p = (Doctor) session.load(Doctor.class, new Integer(id));
 		//logger.info("Person loaded successfully, Person details="+p);
 		return p;
